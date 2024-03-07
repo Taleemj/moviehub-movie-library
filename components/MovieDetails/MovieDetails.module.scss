@@ -1,0 +1,292 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 90%;
+  margin: 40px auto;
+  .allmedia {
+    margin: 25px 0;
+    font-weight: 800;
+  }
+  .main {
+    width: 80%;
+    padding-right: 20px;
+    .share {
+      margin: 25px 0 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      .sharetitle {
+        position: absolute;
+        top: -50%;
+        left: 40%;
+      }
+      .copylink {
+        background-color: transparent;
+        cursor: pointer;
+        outline: none;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+          to right,
+          rgba(var(--LightGreen), 1) 0%,
+          rgba(var(--LightBlue), 1) 100%
+        );
+        padding: 0 10px;
+        border: none;
+        color: #fff;
+        height: 30px;
+        svg {
+          width: 18px;
+          height: 18px;
+          margin-right: 5px;
+        }
+      }
+      button {
+        margin: 0 15px 15px;
+        transition: all 0.5s;
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    .actors {
+      h2 {
+        margin-bottom: 20px;
+      }
+      .cast {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 0 10px 0 0;
+        margin-bottom: 20px;
+        &::-webkit-scrollbar {
+          height: 10px;
+          background-color: #fff;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(var(--darkerGrey));
+          border-radius: 10px;
+        }
+        .actor {
+          width: 138px;
+          flex: 0 0 auto;
+          margin: 10px 4px 10px 10px;
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+          overflow: hidden;
+          background-color: #fff;
+          border-radius: 10px;
+          .image {
+            width: 140px;
+            img {
+              width: 100%;
+              height: 175px;
+            }
+          }
+          .name {
+            padding: 10px;
+            height: 95px;
+            h4 {
+              font-size: 15px;
+              font-weight: 600;
+            }
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+    .seasons {
+      margin: 19px 0;
+      h1 {
+        margin: 10px 0;
+      }
+      select {
+        outline: none;
+        margin: 5px 0;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+      .episodes {
+        display: flex;
+        flex-wrap: wrap;
+        p {
+          margin: 10px 10px 0 0;
+          background-color: #ebebeb;
+          padding: 12px 20px;
+          font-size: 14px;
+          border-radius: 3px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s;
+          &:hover {
+            svg,
+            .epname {
+              color: rgba(var(--LightBlue));
+            }
+            color: rgba(var(--LightBlue));
+          }
+          svg {
+            font-size: 12px;
+            margin-right: 8px;
+            color: #474747;
+            transition: all 0.3s;
+          }
+          .epname {
+            transition: all 0.3s;
+            color: #474747;
+          }
+        }
+      }
+    }
+    .social {
+      margin-top: 50px;
+      .reviewcontainer {
+        h4 {
+          margin: 10px 0;
+        }
+        .all {
+          cursor: pointer;
+          &:hover {
+            color: rgba(var(--darkerGrey));
+          }
+        }
+        .review {
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+          border: 1px solid rgba(var(--darkerGrey));
+          border-radius: 8px;
+          padding: 20px;
+          .author {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            span {
+              margin-left: 10px;
+              h3 {
+                margin-bottom: 4px;
+              }
+              p {
+                font-size: 14px;
+              }
+            }
+            img {
+              width: 45px;
+              height: 45px;
+              border-radius: 50%;
+            }
+          }
+          pre {
+            white-space: pre-wrap;
+            p {
+              font-size: 14px;
+              span {
+                text-decoration: underline;
+                cursor: pointer;
+                &:hover {
+                  color: rgba(var(--darkerGrey));
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .sidebar {
+    .icons {
+      svg {
+        font-size: 40px;
+      }
+    }
+    .info {
+      margin-top: 20px;
+      div {
+        margin-bottom: 20px;
+        h4 {
+          font-size: 18px;
+        }
+        p {
+          margin-top: 10px;
+          font-size: 15px;
+          display: flex;
+          align-items: center;
+          a {
+            img {
+              width: auto;
+              height: 30px;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 8px;
+    .main {
+      width: 100%;
+      padding-right: 0;
+      .share {
+        .sharetitle {
+          top: -55%;
+          left: 35%;
+        }
+        .copylink {
+          padding: 0 8px;
+        }
+        button {
+          margin: 0 8px 15px;
+          svg {
+            width: 30px;
+            height: 30px;
+          }
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+      .actors {
+        .cast {
+          padding: 0 25px 0 0;
+        }
+      }
+      .seasons {
+        .episodes {
+          p {
+            width: 100%;
+            justify-content: flex-start;
+          }
+        }
+      }
+      .social {
+        .reviewcontainer {
+          .review {
+            width: 95%;
+            padding: 20px 10px;
+          }
+        }
+      }
+    }
+    .sidebar {
+      margin-top: 20px;
+      .info {
+        margin-top: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  background-color: rgba(var(--DarkBlue));
+  color: #cfcfcf;
+  .logo {
+    width: 24%;
+    h1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #4af2f7;
+      background: radial-gradient(
+        circle farthest-corner at center center,
+        rgba(var(--LightBlue)) 5%,
+        rgba(var(--LightGreen)) 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      div {
+        background-color: rgba(var(--LightBlue));
+        width: 60px;
+        height: 20px;
+        border-radius: 5rem;
+        margin-left: 5px;
+      }
+    }
+  }
+  .footertxt {
+    width: 60%;
+    padding: 0 20px;
+    ul {
+      color: #fff;
+      list-style: none;
+      margin-top: 5px;
+      display: flex;
+      a {
+        margin-right: 10px;
+      }
+    }
+    p {
+      margin-top: 5px;
+      a {
+        text-decoration: underline;
+        margin-left: 3px;
+        transition: all 0.3s;
+        &:hover {
+          text-decoration: none;
+          color: rgba(var(--LightBlue));
+        }
+      }
+      svg {
+        margin: 0 3px;
+        color: rgba(var(--LightBlue));
+        font-size: 14px;
+      }
+    }
+  }
+  .disclaimer {
+    width: 20%;
+    border: 1px solid #fff;
+    padding: 10px;
+    position: relative;
+    span {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 13px;
+      height: 13px;
+      display: block;
+      border-radius: 50%;
+      background-color: red;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+@media (max-width: 762px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+    flex-direction: column;
+    .logo {
+      width: 100%;
+      h1 {
+        justify-content: flex-start;
+      }
+    }
+    .footertxt {
+      width: 100%;
+      margin: 16px 0;
+      padding: 0;
+    }
+    .disclaimer {
+      width: 100%;
+    }
+  }
+}

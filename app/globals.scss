@@ -1,0 +1,63 @@
+:root {
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  --scrollerGrey: 219, 219, 219;
+  --lightGrey: 227, 227, 227;
+  --darkerGrey: 200, 200, 200;
+  --DarkBlue: 3, 37, 65;
+  --LightBlue: 1, 180, 228;
+  --LighterGreen: 192, 254, 207;
+  --LightGreen: 30, 213, 169;
+  --LogoGreen: 144, 206, 161;
+  --LogoOrange: 253, 193, 112;
+  --LogoRed: 217, 59, 99;
+  --accountSilver: 149, 149, 149;
+  --accountPink: 234, 20, 140;
+  --accountPurple: 128, 91, 231;
+  --accountGreen: 1, 210, 119;
+  --accountTeal: 1, 198, 172;
+  --accountLightBlue: 1, 180, 228;
+  --accountBlue: 1, 119, 210;
+  --accountOrange: 210, 119, 1;
+  --accountYellow: 210, 144, 1;
+  --accountRed: 212, 2, 66;
+  --imageBorderRadius: 8px;
+  --maxPrimaryPageWidth: 1400px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  // max-width: 100vw;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: #fff;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--lightGrey));
+    border-radius: 10px;
+  }
+}
+.loading {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}

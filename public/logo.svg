@@ -1,0 +1,57 @@
+<svg fill="none" viewBox="0 0 600 300" width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+	  @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        .container {
+          display: flex;
+          width: 100%;
+          height: 300px;
+          background: linear-gradient(-45deg, #ee7752, #e73c7e, #F1DB4D,  #f3df58);
+          background-size: 400% 400%;
+		  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          color: white;
+	  animation: gradient 8s ease infinite;
+        }
+		h1 {
+      display: flex;
+      align-items: center;
+	  margin: 0 auto;
+      background: #4af2f7;
+      background: radial-gradient(
+        circle farthest-corner at center center,
+        rgba(1, 180, 228) 5%,
+        rgba(30, 213, 169) 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+	  font-size: 5rem;
+    }
+	h1 div {
+        background-color: rgba(1, 180, 228);
+        width: 100px;
+        height: 30px;
+        border-radius: 5rem;
+        margin-left: 5px;
+      }
+      </style>
+
+      <div class="container">
+        <h1>
+			MovieHub <div></div>
+		</h1>
+      </div>
+    </div>
+  </foreignObject>
+</svg>

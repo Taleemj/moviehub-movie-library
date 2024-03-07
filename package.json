@@ -1,0 +1,28 @@
+{
+  "name": "moviehub",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.5",
+    "@vercel/analytics": "^1.0.2",
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0-rc.12",
+    "currency-formatter": "^1.5.9",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
+    "next": "^14.0.4",
+    "next-share": "^0.27.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
+    "sass": "^1.64.2"
+  }
+}

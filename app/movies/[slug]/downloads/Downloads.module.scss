@@ -1,0 +1,95 @@
+.container {
+  margin-top: 64px;
+  min-height: 90vh;
+  .moviedetails {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(var(--DarkBlue));
+    color: #fff;
+    padding: 15px 20px;
+    img {
+      width: 58px;
+      height: 87px;
+      margin-right: 10px;
+    }
+    .subnav {
+      h1 {
+        &:hover {
+          color: #cccc;
+        }
+      }
+      p {
+        color: #cccc;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+  .othercontainer {
+    display: flex;
+    margin: 30px auto;
+    padding: 0 10px;
+    .howto {
+      width: 45%;
+      padding-right: 15px;
+      h2 {
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 19px;
+        margin: 8px 0;
+        a {
+          color: rgba(var(--LightBlue));
+        }
+      }
+    }
+    .linksList {
+      width: 80%;
+      margin: 0 auto;
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        .thename {
+          width: 80%;
+        }
+        .thelink {
+          width: 15%;
+        }
+        .theicon {
+          width: 5%;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 762px) {
+  .container {
+    min-height: 100vh;
+    .othercontainer {
+      flex-direction: column;
+      .howto {
+        width: 100%;
+        padding-right: 0;
+      }
+      .linksList {
+        width: 98%;
+        margin-top: 20px;
+        a {
+          flex-direction: column;
+          .theicon,
+          .thename,
+          .thelink {
+            margin-bottom: 5px;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
