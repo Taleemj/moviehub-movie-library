@@ -21,7 +21,7 @@ const Footer = () => {
         <p className={styles.footertxt}>
           Powered by{" "}
           <Link href="https://developer.themoviedb.org/reference/intro/getting-started" target="_blanks">
-            TMDB's API
+            TMDB&apos;s API
           </Link>
         </p>
       </div>
