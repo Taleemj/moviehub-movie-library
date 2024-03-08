@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import styles from "./MovieDetails.module.scss";
 import { BsLink } from "react-icons/bs";
 import { FaPlay } from "react-icons/fa";
-import { CiMedicalClipboard } from "react-icons/ci";
-import { LuClipboardCheck } from "react-icons/lu";
 import currencyFormatter from "currency-formatter";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,21 +10,6 @@ import Media from "../Media/Media";
 import Recommendations from "../recommendations/Recommendations";
 import axios from "axios";
 import WatchIframe from "../watchIframe/WatchIframe";
-import {
-  FacebookShareButton,
-  FacebookIcon,
-  FacebookMessengerShareButton,
-  FacebookMessengerIcon,
-  RedditShareButton,
-  RedditIcon,
-  TelegramShareButton,
-  TelegramIcon,
-  TwitterShareButton,
-  TwitterIcon,
-  WhatsappShareButton,
-  WhatsappIcon,
-} from "next-share";
-import Script from "next/script";
 
 const MovieDetails = ({ movieid, mediatype, details, cast, name }) => {
   const [open, setopen] = useState(false);
@@ -84,69 +67,15 @@ const MovieDetails = ({ movieid, mediatype, details, cast, name }) => {
     setseasons((s) => [...new Set(s)]);
   }, [theseason]);
   const singleReview = reviews[0];
-  const handleclosewatch = () => {
-    setopen(false);
-  };
+
   const openplayer = (e) => {
     settheurl(`https://vidsrc.to/embed/tv/${details.id}/${theseason}/${e}`);
     setopen(true);
   };
 
-  const copyToClipBoard = () => {
-    navigator.clipboard.writeText(
-      `https://moviehubdb.vercel.app/${mediatype == "movie" ? "movies" : "tvshows"}/${movieid}`
-    );
-    setcopied(true);
-    setTimeout(() => {
-      setcopied(false);
-    }, 5000);
-  };
   return (
     <div className={styles.container}>
-      {open && <WatchIframe handleclose={handleclosewatch} theurl={theurl} />}
       <div className={styles.main}>
-        <div className={styles.share}>
-          <h5 className={styles.sharetitle}>Share {details.title || details.name}</h5>
-          <button className={styles.copylink} onClick={copyToClipBoard}>
-            {copied ? <LuClipboardCheck /> : <CiMedicalClipboard />} {copied ? "link copied" : "copy link"}
-          </button>
-          <FacebookShareButton
-            url={`https://moviehub2day.vercel.app/${mediatype == "movie" ? "movies" : "tvshows"}/${movieid}`}
-            title={"MovieHub2Day is a free online movie streaming and downloading platform"}
-          >
-            <FacebookIcon />
-          </FacebookShareButton>
-          <TwitterShareButton
-            url={`https://moviehub2day.vercel.app/${mediatype == "movie" ? "movies" : "tvshows"}/${movieid}`}
-            title={"MovieHub2Day is a free online movie streaming and downloading platform"}
-          >
-            <TwitterIcon />
-          </TwitterShareButton>
-          <FacebookMessengerShareButton
-            url={`https://moviehub2day.vercel.app/${mediatype == "movie" ? "movies" : "tvshows"}/${movieid}`}
-            title={"MovieHub2Day is a free online movie streaming and downloading platform."}
-          >
-            <FacebookMessengerIcon />
-          </FacebookMessengerShareButton>
-          <RedditShareButton
-            url={`https://moviehub2day.vercel.app/${mediatype == "movie" ? "movies" : "tvshows"}/${movieid}`}
-            title={"MovieHub2Day is a free online movie streaming and downloading platform"}
-          >
-            <RedditIcon />
-          </RedditShareButton>
-          <WhatsappShareButton
-            url={`https://moviehub2day.vercel.app/${mediatype == "movie" ? "movies" : "tvshows"}/${movieid}`}
-            title={"MovieHub2Day is a free online movie streaming and downloading platform"}
-          >
-            <WhatsappIcon />
-          </WhatsappShareButton>
-          <TelegramShareButton
-            url={`https://moviehub2day.vercel.app/${mediatype == "movie" ? "movies" : "tvshows"}/${movieid}`}
-            title={"MovieHub2Day is a free online movie streaming and downloading platform"}
-          >
-            <TelegramIcon />
-          </TelegramShareButton>
-        </div>
         <div className={styles.actors}>
           <h2>Cast</h2>
           <div className={styles.cast}>
@@ -177,17 +106,9 @@ const MovieDetails = ({ movieid, mediatype, details, cast, name }) => {
             <h4>Full cast and crew.</h4>
           </Link>
         </div>
-
-        <Script
-          async="async"
-          data-cfasync="false"
-          src="//pl22169112.toprevenuegate.com/f397df15ef98fbb0f5cf324aadcec2c9/invoke.js"
-        ></Script>
-        <div id="container-f397df15ef98fbb0f5cf324aadcec2c9"></div>
-
         {mediatype !== "movie" && (
           <div id="seasons" className={styles.seasons}>
-            <h1>Watch Now</h1>
+            <h1>Episodes List</h1>
             <select onChange={(e) => settheseason(e.target.value)}>
               {seasons.map((s, i) => (
                 <option key={i} value={s}>
@@ -197,8 +118,7 @@ const MovieDetails = ({ movieid, mediatype, details, cast, name }) => {
             </select>
             <div className={styles.episodes}>
               {episodes.map((e) => (
-                <p key={e.id} onClick={() => openplayer(e.episode_number)}>
-                  <FaPlay />{" "}
+                <p key={e.id}>
                   <span className={styles.epnum}>
                     <b>Episode {e.episode_number}</b>
                   </span>

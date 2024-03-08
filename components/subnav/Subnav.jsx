@@ -13,9 +13,6 @@ const Subnav = ({ mediatype, id }) => {
       <Link href={`/${mediatype}/${id}/reviews`}>
         <h2>Reviews</h2>
       </Link>
-      <Link href={`/${mediatype}/${id}/downloads`}>
-        <h2>Torrent Download</h2>
-      </Link>
       <Link href={`/${mediatype}/${id}/cast`}>
         <h2>Full Cast and Crew</h2>
       </Link>

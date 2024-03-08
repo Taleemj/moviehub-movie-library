@@ -11,51 +11,6 @@
   .main {
     width: 80%;
     padding-right: 20px;
-    .share {
-      margin: 25px 0 0;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      .sharetitle {
-        position: absolute;
-        top: -50%;
-        left: 40%;
-      }
-      .copylink {
-        background-color: transparent;
-        cursor: pointer;
-        outline: none;
-        display: flex;
-        align-items: center;
-        background: linear-gradient(
-          to right,
-          rgba(var(--LightGreen), 1) 0%,
-          rgba(var(--LightBlue), 1) 100%
-        );
-        padding: 0 10px;
-        border: none;
-        color: #fff;
-        height: 30px;
-        svg {
-          width: 18px;
-          height: 18px;
-          margin-right: 5px;
-        }
-      }
-      button {
-        margin: 0 15px 15px;
-        transition: all 0.5s;
-        svg {
-          width: 30px;
-          height: 30px;
-        }
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
-    }
     .actors {
       h2 {
         margin-bottom: 20px;
@@ -241,25 +196,6 @@
     .main {
       width: 100%;
       padding-right: 0;
-      .share {
-        .sharetitle {
-          top: -55%;
-          left: 35%;
-        }
-        .copylink {
-          padding: 0 8px;
-        }
-        button {
-          margin: 0 8px 15px;
-          svg {
-            width: 30px;
-            height: 30px;
-          }
-          &:hover {
-            transform: scale(1.1);
-          }
-        }
-      }
       .actors {
         .cast {
           padding: 0 25px 0 0;
