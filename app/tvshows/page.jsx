@@ -6,7 +6,6 @@ import axios from "axios";
 import Image from "next/image";
 import Card from "@/components/Card2/Card";
 import Genres from "@/components/Genres";
-import Script from "next/script";
 
 const Page = () => {
   const [page, setPage] = useState(1);
@@ -18,11 +17,7 @@ const Page = () => {
 
   const genreids = selectedGenre.map((g) => g.id);
   const thegenres =
-    genreids.length > 1
-      ? genreids.reduce((acc, curr) => acc + "," + curr)
-      : genreids.length == 1
-      ? genreids[0]
-      : "";
+    genreids.length > 1 ? genreids.reduce((acc, curr) => acc + "," + curr) : genreids.length == 1 ? genreids[0] : "";
 
   const fetchData = async () => {
     const { data } = await axios.get(
@@ -36,12 +31,7 @@ const Page = () => {
   }, [page, thesort, releaseYear, thegenres]);
   return loading ? (
     <div className="loading">
-      <Image
-        src={"/loaderspinner.svg"}
-        alt="loading"
-        width={100}
-        height={100}
-      />
+      <Image src={"/loaderspinner.svg"} alt="loading" width={100} height={100} />
     </div>
   ) : (
     <div className={styles.container}>
@@ -53,12 +43,8 @@ const Page = () => {
             <select name="sort" onChange={(e) => setthesort(e.target.value)}>
               <option value="popularity.desc">Popular Descending</option>
               <option value="popularity.asc">Popular Ascending</option>
-              <option value="primary_release_date.asc">
-                Release Year Ascending
-              </option>
-              <option value="primary_release_date.desc">
-                Release Year Decending
-              </option>
+              <option value="primary_release_date.asc">Release Year Ascending</option>
+              <option value="primary_release_date.desc">Release Year Decending</option>
               <option value="vote_average.asc">Rating Ascending</option>
               <option value="vote_average.desc">Rating Decending</option>
             </select>

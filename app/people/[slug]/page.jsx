@@ -4,7 +4,6 @@ import styles from "./Person.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
-import Script from "next/script";
 
 const Page = ({ params: { slug } }) => {
   const [details, setDetails] = useState();
@@ -127,13 +126,6 @@ const Page = ({ params: { slug } }) => {
                 )}
               </pre>
             </div>
-
-            <Script
-              async="async"
-              data-cfasync="false"
-              src="//pl22169112.toprevenuegate.com/f397df15ef98fbb0f5cf324aadcec2c9/invoke.js"
-            ></Script>
-            <div id="container-f397df15ef98fbb0f5cf324aadcec2c9"></div>
 
             <section className={styles.knownfor}>
               <h3>All Known Credits.</h3>
