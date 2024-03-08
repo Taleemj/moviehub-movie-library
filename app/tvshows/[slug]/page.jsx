@@ -8,7 +8,6 @@ import { FaPlay } from "react-icons/fa";
 import Link from "next/link";
 import MovieDetails from "@/components/MovieDetails/MovieDetails";
 import Subnav from "@/components/subnav/Subnav";
-import { IoMdDownload } from "react-icons/io";
 
 const Page = ({ params: { slug } }) => {
   const [open, setopen] = useState(false);
@@ -27,9 +26,7 @@ const Page = ({ params: { slug } }) => {
 https://api.themoviedb.org/3/tv/${slug}/credits?api_key=${process.env.NEXT_PUBLIC_THEMOVIEDB_API_KEY}`);
     setwritersandDirectors(
       cast.data?.crew.filter(
-        (item) =>
-          item.known_for_department == "Writing" ||
-          item.known_for_department == "Directing"
+        (item) => item.known_for_department == "Writing" || item.known_for_department == "Directing"
       )
     );
     setcastmembers(cast.data);
@@ -47,23 +44,11 @@ https://api.themoviedb.org/3/tv/${slug}/credits?api_key=${process.env.NEXT_PUBLI
   const rating = (details.vote_average?.toFixed(1) / 10) * 100;
   return loading ? (
     <div className="loading">
-      <Image
-        src={"/loaderspinner.svg"}
-        alt="loading"
-        width={100}
-        height={100}
-      />
+      <Image src={"/loaderspinner.svg"} alt="loading" width={100} height={100} />
     </div>
   ) : (
     <div className={styles.container}>
-      {open && (
-        <Iframe
-          open={open}
-          handleclose={handleclose}
-          movieid={slug}
-          type={"tv"}
-        />
-      )}
+      {open && <Iframe open={open} handleclose={handleclose} movieid={slug} type={"tv"} />}
       <Subnav mediatype={"tvshows"} id={details.id} />
       <div
         className={styles.header}
@@ -114,8 +99,7 @@ https://api.themoviedb.org/3/tv/${slug}/credits?api_key=${process.env.NEXT_PUBLI
               ))}
               <div></div>{" "}
               <p>
-                ({details.number_of_seasons}) seasons. (
-                {details.number_of_episodes}) episodes.
+                ({details.number_of_seasons}) seasons. ({details.number_of_episodes}) episodes.
               </p>
             </span>
           </div>
@@ -124,11 +108,7 @@ https://api.themoviedb.org/3/tv/${slug}/credits?api_key=${process.env.NEXT_PUBLI
               className={styles.progress}
               style={{
                 background: `radial-gradient(closest-side, rgba(0,0,0) 78%, transparent 95% 100%),conic-gradient(${
-                  rating >= 70
-                    ? "rgba( 1, 210, 119)"
-                    : rating >= 50
-                    ? "rgba(170, 255, 0)"
-                    : "rgba(212, 2, 66)"
+                  rating >= 70 ? "rgba( 1, 210, 119)" : rating >= 50 ? "rgba(170, 255, 0)" : "rgba(212, 2, 66)"
                 } ${rating}%, rgba(0, 0, 0, 0.6) 0)`,
               }}
             >
@@ -137,19 +117,9 @@ https://api.themoviedb.org/3/tv/${slug}/credits?api_key=${process.env.NEXT_PUBLI
             <h3>
               User <br /> Score
             </h3>
-            <Link href={`#seasons`}>
-              <h4>
-                <FaPlay /> Watch Now
-              </h4>
-            </Link>
             <h4 onClick={handleopen}>
               <FaPlay /> Play Trailer
             </h4>
-            <Link href={`/tvshows/${slug}/downloads`}>
-              <h4>
-                <IoMdDownload /> Download
-              </h4>
-            </Link>
           </div>
           <h3 className={styles.tagline}>{details.tagline}</h3>
           <div className={styles.overview}>
@@ -166,13 +136,7 @@ https://api.themoviedb.org/3/tv/${slug}/credits?api_key=${process.env.NEXT_PUBLI
           </div>
         </div>
       </div>
-      <MovieDetails
-        movieid={slug}
-        mediatype="tv"
-        cast={castmembers}
-        details={details}
-        name={details.name}
-      />
+      <MovieDetails movieid={slug} mediatype="tv" cast={castmembers} details={details} name={details.name} />
     </div>
   );
 };
