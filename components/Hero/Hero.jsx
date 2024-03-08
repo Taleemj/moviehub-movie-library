@@ -22,20 +22,17 @@ const Hero = () => {
     <section
       className={styles.container}
       style={{
-        backgroundImage: `linear-gradient(to right, rgba(var(--DarkBlue), 0.8) 0%,rgba(var(--DarkBlue), 0.4)),url("${backdrop}")`,
+        backgroundImage: `linear-gradient(to right, rgba(var(--DarkBlue), 0.8) 0%,rgba(var(--DarkBlue), 0.7)),url("${backdrop}")`,
       }}
     >
       <div className={styles.txt}>
         <h1>Welcome.</h1>
         <strong>
-          <h2>Watch Millions movies and TV shows for free. Explore now.</h2>
+          <h2>Millions of movies, TV shows and people to discover. Explore now.</h2>
         </strong>
         <Link href={"/search"}>
           <form action="">
-            <input
-              type="text"
-              placeholder="search for a movie, tv show, person..."
-            />
+            <input type="text" placeholder="search for a movie, tv show, person..." />
             <button type="submit">search</button>
           </form>
         </Link>
