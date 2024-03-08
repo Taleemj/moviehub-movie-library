@@ -7,9 +7,8 @@ import Custompagination from "@/components/CustomPagination/CustomPagination";
 import Image from "next/image";
 
 const Page = () => {
-  // state comperesson function ...
   const [thepeople, setthepeople] = useState([]);
-  const [page, setPage] = useState();
+  const [page, setPage] = useState(1);
   const [numberofpages, setNumberofpages] = useState();
   const [loading, setloading] = useState(true);
 
@@ -27,12 +26,7 @@ const Page = () => {
   }, [page]);
   return loading ? (
     <div className="loading">
-      <Image
-        src={"/loaderspinner.svg"}
-        alt="loading"
-        width={100}
-        height={100}
-      />
+      <Image src={"/loaderspinner.svg"} alt="loading" width={100} height={100} />
     </div>
   ) : (
     <div className={styles.container}>
