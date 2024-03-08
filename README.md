@@ -8,9 +8,9 @@
   <h3 align="center">An Awesome Site.</h3>
 
   <p align="center">
-    A movie and tv series streaming library and downloader.
+    A movie, tv series and celebrities library.
     <br />
-    <a href="https://moviehub2day.vercel.app/home"><strong>Explore the site. »</strong></a>
+    <a href="https://moviehub-movie-library.vercel.app/" target="_blank"><strong>Explore the site. »</strong></a>
 </div>
 
 ![moviehub](./public/moviehub.png)
