@@ -14,14 +14,11 @@ const Navbar = () => {
       </div>
       <Link href={"/"}>
         <h1>
-          MovieHub2day <div></div>
+          MovieHub <div></div>
         </h1>
       </Link>
-      <ul
-        onClick={() => setOpen(false)}
-        style={{ left: `${open ? "0" : "-100vw"}` }}
-      >
-        <Link href={"/home"}>
+      <ul onClick={() => setOpen(false)} style={{ left: `${open ? "0" : "-100vw"}` }}>
+        <Link href={"/"}>
           <li>Home</li>
         </Link>
         <Link href={"/movies"}>
