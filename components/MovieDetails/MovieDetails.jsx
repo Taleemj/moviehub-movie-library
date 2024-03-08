@@ -2,14 +2,12 @@
 import { useState, useEffect } from "react";
 import styles from "./MovieDetails.module.scss";
 import { BsLink } from "react-icons/bs";
-import { FaPlay } from "react-icons/fa";
 import currencyFormatter from "currency-formatter";
 import Image from "next/image";
 import Link from "next/link";
 import Media from "../Media/Media";
 import Recommendations from "../recommendations/Recommendations";
 import axios from "axios";
-import WatchIframe from "../watchIframe/WatchIframe";
 
 const MovieDetails = ({ movieid, mediatype, details, cast, name }) => {
   const [open, setopen] = useState(false);
