@@ -6,8 +6,8 @@ import Footer from "@/components/footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Moviehub Movie library",
-  description: "explore movies, series and celebrities",
+  title: "Moviehub Movie library (MHML)",
+  description: "MovieHub Movie library (MHML) is a library for movies, TV shows and actors.",
 };
 
 export default function RootLayout({ children }) {
